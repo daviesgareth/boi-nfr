@@ -1,0 +1,16 @@
+{
+  "name": "northridge-dashboard",
+  "version": "1.0.0",
+  "description": "Northridge Finance — Buyback & Risk Analysis Dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "compression": "^1.7.4"
+  }
+}
