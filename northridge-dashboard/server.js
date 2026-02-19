@@ -16,10 +16,15 @@ app.use((req, res, next) => {
   next();
 });
 
-// Serve static files with caching
+// Serve static files — no cache during development
 app.use(express.static(path.join(__dirname, 'public'), {
-  maxAge: '1h',
-  etag: true,
+  maxAge: 0,
+  etag: false,
+  lastModified: false,
+  setHeaders: (res) => {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+  }
 }));
 
 // Health check endpoint for Railway
